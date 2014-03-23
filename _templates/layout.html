@@ -8,36 +8,64 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="sidebar">
-            <div id="header">
-                <h1><a href="{{ get_url() }}">{{ site.title }}</a></h1>
-                {% if site.subtitle %}<h2>{{ site.subtitle }}</h2>{% endif %}
+<div class="row show-for-small-only">
+<div class="small-12">
+<nav class="tab-bar">
+  <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+   </nav>
+
+    <aside class="left-off-canvas-menu">
+    <ul class="off-canvas-list"> 
+    <li><a href="http://wiki.spaceinvade.rs">Wiki</a></li>
+			<li><a href="{{ get_url() }}">Blog</a></li>
+			<li><a href="{{ get_url('archives/') }}">Archives</a></li>
+			<li><a href="{{ get_url('feed.xml') }}">Feed</a></li>
+			</ul></aside>
+   
+</div>
+</div>
+
+
+
+ <div class="row">
+	  <div id="side-navigation" class="hide-for-small-only large-3 medium-4 columns" role="navigation">
+            <div id="header" class="hide-for-medium-only">
+                <h1><a href="{{ get_url() }}" class="banner">{{ site.title }}</a></h1>
+                {% if site.subtitle %}<h2>{{ site.subtitle }}</h2>{% endif %} 
             </div>
             
-            <div class="module module-nav">
-                <ul class="unstyled">
+              <div>
+		  <ul class="side-nav"> 
 		    <li><a href="http://wiki.spaceinvade.rs">Wiki</a></li>
-                    <li><a href="{{ get_url() }}">Blog</a></li>
-                    <li><a href="{{ get_url('archives/') }}">Archives</a></li>
-                    <li><a href="{{ get_url('feed.xml') }}">Feed</a></li>
-                </ul>
-            </div>
+			<li><a href="{{ get_url() }}">Blog</a></li>
+			<li><a href="{{ get_url('archives/') }}">Archives</a></li>
+			<li><a href="{{ get_url('feed.xml') }}">Feed</a></li>
+		  </ul>
+	      </div>
             
-            <div class="module">
-                
-            </div>
             
             <div id="footer">
-		<p><img src="{{ get_asset('images/foogun_small.png') }}"/></p>
+		<p class="hide-for-medium-only"><img src="{{ get_asset('images/foogun_small.png') }}"/></p>
                 <p>{% if site.author %}&copy; {{ none|date('%Y') }} {{ site.author }} &ndash; {% endif %}powered by <a href="http://mynt.mirroredwhite.com/">mynt</a></p>
             </div>
         </div>
         
-        {% block breadcrumbs %}{% endblock %}
         
-        <div id="content">
+        
+        <div id="content" class="large-6 medium-5 columns" role="main">
+	  <div class="row breadcrumb">
+	  {% block breadcrumbs %}{% endblock %}
+	  </div>
+	 
             {% block content %}{% endblock %}
+         
+         
+   
+         
+        </div>
+        
+        <div class="large-3 medium-3 columns">
+
         </div>
     </div>
 </body>
