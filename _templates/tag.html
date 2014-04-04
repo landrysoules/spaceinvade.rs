@@ -13,6 +13,7 @@
 
 {% block content %}
     {% for year, archive in tag.archives %}
+    <div class="row archive">
         <dl class="horizontal archives">
             <dt class="archives-year"><a href="{{ get_url(archive.url) }}">{{ year }}</a></dt>
             <dd>
@@ -30,5 +31,6 @@
                 </dl>
             </dd>
         </dl>
+       </div>
     {% endfor %}
 {% endblock %}

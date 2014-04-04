@@ -22,12 +22,12 @@
 }
 
 .sidebar {
-  background-image: url("../images/sbg.png");
+  background-image: url("../images/sbg.png"); 
 }
 
 .banner{
   font-family: 'maximum_securityregular', Arial, sans-serif;
-  font-size: 60px;
+  font-size: 58px;
 }
 
 A{
@@ -36,6 +36,7 @@ A{
 
 A:hover{
  color:#145B0F; 
+ text-decoration: none;
 }
 
 .button{
@@ -47,22 +48,29 @@ A:hover{
  }
  
  BODY{
+  background-image:url('../images/hixs_pattern_evolution.png'); 
+  background-repeat:repeat;
   background-color: #292929; 
  color: #D9D9D9;
 font-family: "Ubuntu",sans-serif;
 
  }
  
+ 
+.row{
+   background-color: #292929; 
+}
+ 
  .content{
    background-color: #2D353F; 
    
  }
- 
+ /*
  #content{
  margin-left:15px;
  float:left;
  }
- 
+ */
  .side-nav  A{
      font-style: normal;
   text-transform: uppercase;
@@ -83,12 +91,14 @@ font-family: "Ubuntu",sans-serif;
  }
  
  .side-nav{
-  line-height:10px; 
+  line-height:20px; 
+
  }
  
 #side-navigation{
    background-color:#1a1a1a;
-
+display: table-cell;
+height:100%;
  }
  
  #footer{
@@ -114,7 +124,7 @@ font-family: "Ubuntu",sans-serif;
     list-style: none inside none;
     padding: 9px 9px 9px 5px;
     top: 18px;
-
+    line-height: 40px;
  }
  
  
@@ -185,6 +195,7 @@ line-height:12px !important;
    background-color: #292929; 
    color: #FFF;
    font-size: 13px;
+   padding-top: 25px;
  }
  
   .item-body p{
@@ -239,4 +250,47 @@ dl.horizontal > dt {
   background-color: #1A1A1A;  
   padding-bottom:15px;
 }
- 
+
+
+  .container {
+   min-height:100%;
+   overflow:hidden;
+  }
+
+html,body{
+height:100%;
+}
+
+#side-navigation, #content, #right-panel{
+margin-bottom: -9999px;
+padding-bottom: 9999px;
+}
+
+#content, #right-panel{
+background-color: #292929;
+
+}
+
+.row.breadcrumb, .row.item, .item-header, .item-body{
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.breadcrumb{
+padding-left: 0px;
+padding-right:0px;
+}
+
+.my-fluid-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row.archive{
+    margin-left: 10px;
+margin-right: 10px;
+margin-top: 20px;
+padding-left:10px;
+}

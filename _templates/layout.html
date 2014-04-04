@@ -2,70 +2,104 @@
 
 <html>
 <head>
+    <title>{% if title %}{{ title }} – {% endif %}{{ site.title }}{% if not
+    title and site.subtitle %} – {{ site.subtitle }}{% endif %}</title>
     {% include 'page.header.html' %}
-    
-    {% if site.title %}<title>{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}{% if not title and site.subtitle %} &ndash; {{ site.subtitle }}{% endif %}</title>{% endif %}
 </head>
 
 <body>
-<div class="row show-for-small-only">
-<div class="small-12">
-<nav class="tab-bar">
-  <a class="left-off-canvas-toggle menu-icon"><span></span></a>
-   </nav>
+	
+	<!-- from example here: http://www.bootply.com/bootstrap-3-migration-guide -->
+	<div class="visible-xs">
+	<nav class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">spaceinvade.rs</a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+                    <li><a href="http://wiki.spaceinvade.rs">Wiki</a></li>
 
-    <aside class="left-off-canvas-menu">
-    <ul class="off-canvas-list"> 
-    <li><a href="http://wiki.spaceinvade.rs">Wiki</a></li>
-			<li><a href="{{ get_url() }}">Blog</a></li>
-			<li><a href="{{ get_url('archives/') }}">Archives</a></li>
-			<li><a href="{{ get_url('feed.xml') }}">Feed</a></li>
-			</ul></aside>
-   
-</div>
-</div>
+                    <li><a href="{{ get_url() }}">Blog</a></li>
+
+                    <li><a href=
+                    "{{ get_url('archives/') }}">Archives</a></li>
+
+                    <li><a href="{{ get_url('feed.xml') }}">Feed</a></li>
+    </ul>
+    <div class="navbar-header navbar-right">
+  		<p class="navbar-text">
+  		<a href="#" class="navbar-link">Username</a>
+  		</p>
+  	</div>
+  </div>
+</nav>
+	</div>
+	
+	
+	
+	
+	
+	
+
+	
+	
+     {% if site.title %}{% endif %}
+
+<div class="container">
 
 
+    <div class="row">
+        <div class="hidden-xs col-md-3" id=
+        "side-navigation">
+            <div id="header">
+                <h1><a class="banner" href="{{ get_url() }}">{{ site.title
+                }}</a></h1>{% if site.subtitle %}
 
- <div class="row">
-	  <div id="side-navigation" class="hide-for-small-only large-3 medium-4 columns" role="navigation">
-            <div id="header" class="hide-for-medium-only">
-                <h1><a href="{{ get_url() }}" class="banner">{{ site.title }}</a></h1>
-                {% if site.subtitle %}<h2>{{ site.subtitle }}</h2>{% endif %} 
+                <h2>{{ site.subtitle }}</h2>{% endif %}
             </div>
-            
-              <div>
-		  <ul class="side-nav"> 
-		    <li><a href="http://wiki.spaceinvade.rs">Wiki</a></li>
-			<li><a href="{{ get_url() }}">Blog</a></li>
-			<li><a href="{{ get_url('archives/') }}">Archives</a></li>
-			<li><a href="{{ get_url('feed.xml') }}">Feed</a></li>
-		  </ul>
-	      </div>
-            
-            
+
+            <div>
+                <ul class="side-nav list-unstyled">
+                    <li><a href="http://wiki.spaceinvade.rs">Wiki</a></li>
+
+                    <li><a href="{{ get_url() }}">Blog</a></li>
+
+                    <li><a href=
+                    "{{ get_url('archives/') }}">Archives</a></li>
+
+                    <li><a href="{{ get_url('feed.xml') }}">Feed</a></li>
+                </ul>
+            </div>
+
             <div id="footer">
-		<p class="hide-for-medium-only"><img src="{{ get_asset('images/foogun_small.png') }}"/></p>
-                <p>{% if site.author %}&copy; {{ none|date('%Y') }} {{ site.author }} &ndash; {% endif %}powered by <a href="http://mynt.mirroredwhite.com/">mynt</a></p>
-            </div>
-        </div>
-        
-        
-        
-        <div id="content" class="large-6 medium-5 columns" role="main">
-	  <div class="row breadcrumb">
-	  {% block breadcrumbs %}{% endblock %}
-	  </div>
-	 
-            {% block content %}{% endblock %}
-         
-         
-   
-         
-        </div>
-        
-        <div class="large-3 medium-3 columns">
+                <p ><img src=
+                "{{ get_asset('images/foogun_small.png') }}"></p>
 
+                <p>{% if site.author %}© {{ none|date('%Y') }} {{ site.author
+                }} – {% endif %}powered by <a href=
+                "http://mynt.mirroredwhite.com/">mynt</a></p>
+            </div>
+            
+            
+        </div>
+
+        <div class="col-xs-12 col-md-6" id="content">
+            <div class="row item">
+                {% block breadcrumbs %}{% endblock %}
+            </div>{% block content %}{% endblock %}
+        </div>
+
+        <div class="hidden-xs col-md-3" id="right-panel">
+			<!--
+            <div class="row">
+     <iframe src="http://static.infomaniak.ch/infomaniak/radio/html/spoonradio_player.html" height="100" width="468" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+            -->
         </div>
     </div>
 </body>

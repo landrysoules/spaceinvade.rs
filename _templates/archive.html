@@ -12,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="row archive">
     <div class="horizontal archives">
         {% for month, posts in archive.months %}
             {% for post in posts %}
@@ -28,4 +29,5 @@
             {% endfor %}
         {% endfor %}
     </div>
+</div>    
 {% endblock %}
