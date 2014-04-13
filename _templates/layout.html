@@ -41,12 +41,7 @@
 	</div>
 	
 	
-	
-	
-	
-	
-
-	
+		
 	
      {% if site.title %}{% endif %}
 
@@ -75,10 +70,26 @@
                     <li><a href="{{ get_url('feed.xml') }}">Feed</a></li>
                 </ul>
             </div>
+            
+            <div id="googleplus_widget">
+	      <span>
+		<!-- Place this tag where you want the widget to render. -->
+		<div class="g-person center-block" data-width="180" data-href="//plus.google.com/u/0/103954666606843459203" data-theme="dark" data-rel="author"></div>
+
+		<!-- Place this tag after the last widget tag. -->
+		<script type="text/javascript">
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/platform.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+	      </span>
+	   </div>
 
             <div id="footer">
-                <p ><img src=
-                "{{ get_asset('images/foogun_small.png') }}"></p>
+                <p><img src=
+                "{{ get_asset('images/alien.png') }}" class="center-block"></p>
 
                 <p>{% if site.author %}© {{ none|date('%Y') }} {{ site.author
                 }} – {% endif %}powered by <a href=
@@ -88,19 +99,20 @@
             
         </div>
 
-        <div class="col-xs-12 col-md-6" id="content">
+        <div class="col-xs-12 col-md-9" id="content">
             <div class="row item">
                 {% block breadcrumbs %}{% endblock %}
             </div>{% block content %}{% endblock %}
         </div>
 
-        <div class="hidden-xs col-md-3" id="right-panel">
-			<!--
+ <!--       <div class="hidden-xs col-md-3" id="right-panel">
+			
             <div class="row">
      <iframe src="http://static.infomaniak.ch/infomaniak/radio/html/spoonradio_player.html" height="100" width="468" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
             </div>
-            -->
+           
         </div>
+        -->
     </div>
 </body>
 </html>
