@@ -13,7 +13,7 @@ Edit core.py as follows:
     def _highlight(self, match):
             language, code = match.groups()
             #formatter = HtmlFormatter(linenos = 'table') replace table with inline
-	    formatter = HtmlFormatter(linenos = 'inline')
+            formatter = HtmlFormatter(linenos = 'inline')
             code = h.unescape_html(code.encode('utf-8')).decode('utf-8')
 
             try:
