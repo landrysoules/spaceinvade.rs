@@ -1,6 +1,6 @@
 ---
 layout: post.html
-title: Fix missing radiotray icon in KDE
+title: Fix missing radiotray icon in KDE taskbar
 tags: [Ubuntu]
 ---
 
