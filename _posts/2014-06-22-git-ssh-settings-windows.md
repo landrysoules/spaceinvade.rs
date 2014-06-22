@@ -50,6 +50,6 @@ and the repository exists.
 
 Open a PowerShell console and type `path\to\pageant.exe path/to/your/bitbucket/repository`  
 For example:
-`"c:\C:\Program Files (x86)\PuTTY\plink.exe" git@bitbucket.org:john_doe/myproject.git`
+`"C:\Program Files (x86)\PuTTY\plink.exe" git@bitbucket.org:john_doe/myproject.git`
 
 Now you should be able to work with your bitbucket repository !
