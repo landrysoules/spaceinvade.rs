@@ -1,6 +1,6 @@
 ---
 layout: post.html
-title: Protractor test problems with angular
+title: Protractor tests problem with angular
 tags: [angular.js]
 ---
 
