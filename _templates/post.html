@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="post_content">
 <div class="row item">
    <!-- <div class="item">-->
         <div class="item-header">
@@ -24,7 +25,9 @@
             {{ post.content }}
         </div>
         
-  
+        <div class="row item-body">
+            <g:plusone></g:plusone>
+        </div>
     
     
     
@@ -46,8 +49,15 @@
     
     
     
-    
+ <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>  
     
     
 <!--</div>-->
+</div>
 {% endblock %}
