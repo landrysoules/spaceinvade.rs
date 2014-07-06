@@ -25,4 +25,5 @@ notepad++
 vim
 alwaysontop
 clementine
-python
+python youtube-dl, subtitles...
+mobaxterm
