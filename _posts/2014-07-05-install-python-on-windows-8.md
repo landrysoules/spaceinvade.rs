@@ -18,7 +18,9 @@ Then type ```easy_install pip``` in the console.
 You can find it [here](http://sourceforge.net/projects/mingw/files/Installer/). Follow the installation wizard, and make sure you install the MinGW Developer Toolkit, and C/C++ packages. Make sure you add MinGW/bin folder to your path.
 ### Force Pip to use MinGW as C compiler ###
 By default, Pip will try to use the MSVS 2008 C compiler, so you have to force it to use MinGW's compiler instead. It's done by creating a file called distutils.cfg in your Windows home repository, and editing it as follow:  
-```[build]
+
+~~~ { nginx }
+[build]
 compiler=mingw32 
-```
+~~~
 Et voilà! Now you should be able to install any package with Pip.
