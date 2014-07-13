@@ -326,7 +326,14 @@ pre{
  width:100%; 
 }
 
-.post_content h3{
+.post_content h2,h3{
 color: #f69500;
 }
 
+.post_content h2{
+font-size: 17px;
+}
+
+.post_content h3{
+font-size: 15px;
+}
