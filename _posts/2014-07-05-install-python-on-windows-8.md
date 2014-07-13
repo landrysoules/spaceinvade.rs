@@ -15,9 +15,10 @@ The detailed procedure is well explained on [pypi's site] (https://pypi.python.o
 After that, add your Python's install Scipts folder (by default c:/Python27/Scripts) to your Windows path.  
 Then type ```easy_install pip``` in the console.
 ### Install MinGW ###
-You can find it [here](http://sourceforge.net/projects/mingw/files/Installer/). Follow the installation wizard, and make sure you install the MinGW Developer Toolkit, and C/C++ packages. Make sure you add MinGW/bin folder to your path.
+You can find it [here](http://sourceforge.net/projects/mingw/files/Installer/). Follow the installation wizard, and make sure you install the MinGW Developer Toolkit, mingw32-base and C++ packages. Make sure you add MinGW/bin folder to your path.  
+![MingW packages](https://ef65e426d0abf9418992e271986035a1945d7865.googledrive.com/host/0Byy3K2j5Zp_TeXByVnlqTS10UUU/mingw.png)  
 ### Force Pip to use MinGW as C compiler ###
-By default, Pip will try to use the MSVS 2008 C compiler, so you have to force it to use MinGW's compiler instead. It's done by creating a file called distutils.cfg in your Windows home repository, and editing it as follow:  
+By default, Pip will try to use the MSVS 2008 C compiler, so you have to force it to use MinGW's compiler instead. It's done by creating a file called distutils.cfg in PYTHON_INSTALL_FOLDER/Lib/distutils repository, and editing it as follow:  
 
 ~~~ { nginx }
 [build]
