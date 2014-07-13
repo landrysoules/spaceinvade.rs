@@ -39,7 +39,7 @@ Run puttygen again, and load your private key:
 Select everything in the "public key for pasting into Open SSH authorized_key file" box, and right click, select "copy".
 
 ### 4/ Run plink
-This crucial step is often forgot, whiwh causes git connection errors like this one:
+This crucial step is often forgot, which causes git connection errors like this one:
 ```
 Connection abandoned.
 fatal: Could not read from remote repository.
