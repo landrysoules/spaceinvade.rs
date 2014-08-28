@@ -20,11 +20,11 @@ However, your application, as great as it is, is useless since you are not able 
 In short:
 
 1.  The client sends an authentication request, with credentials.
-1.  Base on the credentials received, the server generates an encrypted token containing user credentials, and sends it back to the client.
+1.  Based on the credentials received, the server generates an encrypted token containing user credentials, and sends it back to the client.
 1.  With every request to a protected API, the client sends the received token in the "Authorization" header
 1.  The server decodes the token and instantly gets user credentials  
 
-You can get much more detailed of JWT [here](https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token).
+You can get much more detailed explanation of JWT [here](https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token).
 
 ## Required software
 In order to follow this tutorial, you will have to install [node.js](http://nodejs.org/download) and [couchDB](http://couchdb.apache.org/). Nothing too complicated here, just refer to their official documentation.
@@ -37,8 +37,8 @@ Now create a new folder for your application, and cd into it. Let's call our app
 ```mkdir trag``` ```cd trag```  
 Now the fun begin: let's generate our app !  
 ```yo angular-fullstack trag```
-Keep default answer for every question asked by yeoman (if you haven't installed ruby/SASS, replace SASS with other option), but mongobd use (indeed we will use couchDB, so we don't need mongodb scaffolding).
-If generation fails, type ```npm cache clean```, then ```bower cache clean``` and again  ```yo angular-fullstack trag```.  
+Keep default answer for every question asked by yeoman (if you haven't installed ruby/SASS, replace SASS with other option), but mongodb use (indeed we will use couchDB, so we don't need mongodb scaffolding).
+In case generation fails, type ```npm cache clean```, then ```bower cache clean``` and again  ```yo angular-fullstack trag```.  
 And now type ```grunt serve``` and let the magic happen ! Grunt will start node's http server, and open your default browser ! You should see something similar to this:  
 ![trag homepage](https://ef65e426d0abf9418992e271986035a1945d7865.googledrive.com/host/0Byy3K2j5Zp_TeXByVnlqTS10UUU/yeoman.png)
 Pretty cool, isn't it ? And even cooler when you know that this page isn't static at all: the features part is filled with a REST call to /api/things ! You can run [Fiddler](http://www.telerik.com/fiddler) to have a look at what's happening under the hood.  
@@ -126,6 +126,7 @@ module.exports = router;
 ~~~
 You guessed it, we will add our methods to the controller, but first we need to add couchDB support to our app: ```npm install nano --save```.  
 Open [futon](http://localhost:5984/_utils) and create a new database named trag. Modify our (non-secure) users controller:  
+Here, we create a method "profile" that returns profile infos, only if the request contains a valid token.
 /api/users/user.controlller.js
 
 ~~~ { javascript }
@@ -188,6 +189,7 @@ router.post('/signup', controller.signup);
 
 module.exports = router;
 ~~~
+
 
 api/auth/auth.controller.js  
 
