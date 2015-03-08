@@ -1,5 +1,21 @@
+Skip to content
+ This repository
+Explore
+Gist
+Blog
+Help
+landrysoules landrysoules
+ 
+1  Watch 
+  Star 11
+ Fork 2Anomareh/pygments-styles-dump
+ branch: master  pygments-styles-dump/fruity.css
+Andrew FrickeAnomareh on Jan 31, 2012 Initial commit.
+1 contributor
+71 lines (70 sloc)  4.495 kb RawBlameHistory  
 .highlight .hll { background-color: #333333 }
-.highlight .c { color: #008800; font-style: italic; background-color: #292929; } /* Comment */
+.highlight  { background: #111111; color: #ffffff }
+.highlight .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
 .highlight .err { color: #ffffff } /* Error */
 .highlight .g { color: #ffffff } /* Generic */
 .highlight .k { color: #fb660a; font-weight: bold } /* Keyword */
@@ -67,3 +83,5 @@
 .highlight .vg { color: #fb660a } /* Name.Variable.Global */
 .highlight .vi { color: #fb660a } /* Name.Variable.Instance */
 .highlight .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+Status API Training Shop Blog About
+© 2015 GitHub, Inc. Terms Privacy Security Contact

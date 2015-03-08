@@ -9,7 +9,7 @@ tags: [CouchDB]
 CouchDB is an awesome database, however you can face situations where the map/reduce views won't be able to solve efficiently your problem.  
 Let's take a simple client document:  
 
-~~~ { json }
+~~~ json
 "name": "John Doe",
 "gender": "M",
 "age": 39,
@@ -33,7 +33,7 @@ I assume you already have CouchDB installed. If not, please refer to the [offici
 Again, you shouldn't have any problem following the [official installation instructions](https://github.com/rnewson/couchdb-lucene#build-and-run-couchdb-lucene).  
 Once done, you will have to edit your CouchDB configuration file (/etc/couchdb/local.ini), adding the following options:
 
-~~~ { apache }
+~~~ apache
 timeout = 60000
 [httpd_global_handlers]
 _fti = {couch_httpd_proxy, handle_proxy_req, <<"http://localhost:5985">>}
@@ -47,7 +47,7 @@ Here, localhost:5985 is the URL of your CouchDB-Lucene service. Of course, you c
 
 Create a new design document in CouchDB, let's call it _design/lucene. Here is how it looks like (as always when creating design documents, be careful to escape your javascript functions):  
 
-~~~ { json }
+~~~ json
 {
    "_id": "_design/lucene",
    "_rev": "23-b7e715e927d362bc2de8d7716a29947f",

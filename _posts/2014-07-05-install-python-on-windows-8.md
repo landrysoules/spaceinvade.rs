@@ -20,7 +20,7 @@ You can find it [here](http://sourceforge.net/projects/mingw/files/Installer/). 
 ### Force Pip to use MinGW as C compiler ###
 By default, Pip will try to use the MSVS 2008 C compiler, so you have to force it to use MinGW's compiler instead. It's done by creating a file called distutils.cfg in PYTHON_INSTALL_FOLDER/Lib/distutils repository, and editing it as follow:  
 
-~~~ { nginx }
+~~~ nginx
 [build]
 compiler=mingw32 
 ~~~

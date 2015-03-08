@@ -48,7 +48,7 @@ We will know secure our API with JWT, assuming that everything under /api is sec
 
 First we install express-JWT and jsonwebtoken plugins: ```npm install express-jwt --save```, ```npm install jsonwebtoken --save```. Now configure it in /server/config/express.js:  
 
-~~~ { javascript }
+~~~ javascript
 /**
  * Express configuration
  */
@@ -112,7 +112,7 @@ module.exports = function (app) {
 Add a (open) user endpoint: ```yo angular-fullstack:endpoint user```  
 Edit /api/users/index.js:  
 
-~~~ { javascript }
+~~~ javascript
 'use strict';
 
 var express = require('express');
@@ -129,7 +129,7 @@ Open [futon](http://localhost:5984/_utils) and create a new database named trag.
 Here, we create a method "profile" that returns profile infos, only if the request contains a valid token.
 /api/users/user.controlller.js
 
-~~~ { javascript }
+~~~ javascript
 'use strict';
 
 var jwt = require('jsonwebtoken');
@@ -176,7 +176,7 @@ Now we will create an auth endpoint:  ```yo angular-fullstack:endpoint auth```
 
 api/auth/index.js
 
-~~~ { javascript }
+~~~ javascript
 'use strict';
 
 var express = require('express');
@@ -193,7 +193,7 @@ module.exports = router;
 
 api/auth/auth.controller.js  
 
-~~~ { javascript }
+~~~ javascript
 'use strict';
 //Declare URL of your database
 var nano = require('nano')('http://localhost:5984/trag');
@@ -269,7 +269,7 @@ Now that we have checked with postman that our API works as expected, it's time 
 Form validation the angular way is brilliantly explained in this article: [http://tutorials.jenkov.com/angularjs/forms.html](http://tutorials.jenkov.com/angularjs/forms.html).
 Let's first edit client/components/navbar/navbar.html, in order to add sign-in/sign-up form (we will add it in the navigation bar):
 
-~~~ { html }
+~~~ html
 <html>
   <head>
     <meta name="generator"

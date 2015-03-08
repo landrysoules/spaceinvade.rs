@@ -14,7 +14,7 @@ Let's assume you run the script with your user account, lovely named roger.
 ####Server script
 Let's call it update_mynt.py
 
-~~~ { python }
+~~~ python
 #!/home/roger/Dev/Virtualenvs/mynt/bin/python
 
 from git import *
@@ -37,7 +37,7 @@ def application(env, start_response):
 ####Launching gunicorn
 Now we create a bash sript which will be in charge of launching gunicorn:
 
-~~~ { bash }
+~~~ bash
 #!/bin/bash
 set -e
 LOGFILE=/path/to/your/log/file.log
@@ -64,7 +64,7 @@ exec gunicorn update_mynt  -w $NUM_WORKERS --bind=$ADDRESS \
 
 As this script is meant to always run, you should launch it as a service with supervisor. Here is the supervisor config
 
-~~~ { cfg }
+~~~ cfg
 [program:chooseAName]
 
 directory=/path/to/the/dir/your/script/lives/in
@@ -78,7 +78,7 @@ redirect_stderr=true
 
 Now we configure nginx to redirect requests to gunicorn:
 
-~~~ { nginx }
+~~~ nginx
     location /urlofyourchoice {
         proxy_pass http://0.0.0.0:9090; #The port you set gunicorn to listen to
         proxy_set_header Host $host;
