@@ -86,10 +86,8 @@
             <div id="footer">
                 <p><img src=
                 "{{ get_asset('images/alien.png') }}" class="center-block"></p>
-
-                <p>{% if site.author %}© {{ none|date('%Y') }} {{ site.author
-                }} – {% endif %}powered by <a href=
-                "http://mynt.mirroredwhite.com/">mynt</a></p>
+                <p>2014 - {{ none|date('%Y')}} {% if site.author %} {{ site.author }}</p>
+                <p>– {% endif %}powered by <a href="http://mynt.mirroredwhite.com/">mynt</a></p>
             </div>
             
             
