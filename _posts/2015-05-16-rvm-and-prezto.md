@@ -3,8 +3,8 @@ layout: post.html
 title: rvm with prezto
 tags: [ruby]
 ---
-Started hacking in Ruby recently, and immediately looked for the virtualenv equivalent. 
-[rvm](https://rvm.io/) looks like the standard, so I opted for it, but making it work in my configuration has been surprisingly difficult, while the solution was prettt obvious: 
+Started hacking in Ruby recently, and immediately looked for the virtualenv equivalent.  
+[rvm](https://rvm.io/) looks like the standard, so I opted for it, but making it work in my configuration has been surprisingly difficult, while the solution was pretty obvious:  
 If you use [prezto](https://github.com/sorin-ionescu/prezto), all you have to do is install rvm:
 
 ~~~
