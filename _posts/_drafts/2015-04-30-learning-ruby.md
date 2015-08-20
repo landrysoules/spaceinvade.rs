@@ -17,3 +17,7 @@ Rails:
 rails new => new projet
 rails server => launch new project into server
 rails generate => scafolding
+
+The BusStop part 
+
+Really cool way to start a pure ruby project : bundle gem busstopdb
