@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{% if title %}{{ title }}
+      –
+      {% endif %}{{ site.title }}{% if not
+    title and site.subtitle %}
+      –
+      {{ site.subtitle }}{% endif %}</title>
+    {% include "header.swig" %}
+  </head>
+
+  <body>
+
+    <!-- from example here: http://www.bootply.com/bootstrap-3-migration-guide -->
+    <div class="visible-xs">
+      <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">spaceinvade.rs</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="{{ get_url() }}">Blog</a>
+            </li>
+
+            <li>
+              <a href="{{ get_url('archives/') }}">Archives</a>
+            </li>
+            <!-- <li><a href=
+                    "{{ get_url('about') }}">About</a></li>-->
+
+            <li>
+              <a href="{{ get_url('feed.xml') }}">Feed</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    {% if site.title %}{% endif %}
+
+    <div class="container">
+
+      <div class="row">
+        <div class="hidden-xs col-md-3" id="side-navigation">
+          <div id="header">
+            <h1>
+              <a class="banner" href="{{ get_url() }}">{{ site.title
+                }}</a>
+            </h1>{% if site.subtitle %}
+
+            <h2>{{ site.subtitle }}</h2>{% endif %}
+          </div>
+
+          <div>
+            <ul class="side-nav list-unstyled">
+
+              <li>
+                <a href="{{ get_url() }}">Blog</a>
+              </li>
+
+              <li>
+                <a href="{{ get_url('archives/') }}">Archives</a>
+              </li>
+              <!--  <li><a href=
+                    "{{ get_url('about/') }}">About</a></li> -->
+
+              <li>
+                <a href="{{ get_url('feed.xml') }}">Feed</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="googleplus_widget">
+            <span>
+              <!-- Place this tag where you want the widget to render. -->
+              <div class="g-person center-block" data-width="180" data-href="//plus.google.com/u/0/103954666606843459203" data-theme="dark" data-rel="author"></div>
+
+              <!-- Place this tag after the last widget tag. -->
+              <script type="text/javascript">
+                (function () {
+                  var po = document.createElement('script');
+                  po.type = 'text/javascript';
+                  po.async = true;
+                  po.src = 'https://apis.google.com/js/platform.js';
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(po, s);
+                })();
+              </script>
+            </span>
+          </div>
+
+          <div id="footer">
+            <p><img src="/images/alien.png" class="center-block"></p>
+            <p>2014 -
+              {{ now | date('Y') }} 
+              {{ site.author }}</p>
+            <p>– powered by
+              <a href="http://metalsmith.io">metalsmith</a>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-xs-12 col-md-9" id="content">
+          <div class="row item">
+            {% block breadcrumbs %}{% endblock %}
+          </div>{% block content %}{% endblock %}
+        </div>
+
+        <!--       <div class="hidden-xs col-md-3" id="right-panel">
+
+            <div class="row">
+     <iframe src="http://static.infomaniak.ch/infomaniak/radio/html/spoonradio_player.html" height="100" width="468" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+
+        </div>
+        -->
+      </div>
+    </body>
+  </html>

@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
-<!-- <link rel="alternate" href="{{ get_url('feed.xml') }}" type="application/atom+xml"> -->
-
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic|Ubuntu+Mono:400,400italic" type="text/css">
 
 <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="/css/bootstrap-theme.css" type="text/css">
 <link rel="stylesheet" href="/css/lso.css" type="text/css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
 
 <script src="/js/jquery.min.js" type="text/javascript"></script>
 <script src="/js/mynt.min.js" type="text/javascript"></script>
 <script src="/js/bootstrap.js" type="text/javascript"></script>
+<script src="/js/prism.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         var _gaq = _gaq || [];
