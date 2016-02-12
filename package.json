@@ -25,5 +25,9 @@
     "metalsmith-prism": "^2.1.1",
     "metalsmith-snippet": "^2.0.0",
     "swig": "^1.4.2"
+  },
+  "dependencies": {
+    "metalsmith-if": "^0.1.1",
+    "metalsmith-s3": "0.0.2"
   }
 }

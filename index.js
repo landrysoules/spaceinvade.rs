@@ -9,7 +9,9 @@ var metalsmith = require('metalsmith'),
   prism = require('metalsmith-prism'),
   ignore = require('metalsmith-ignore'),
   snippet = require('metalsmith-snippet'),
-  define = require('metalsmith-define')
+  define = require('metalsmith-define'),
+  msIf = require('metalsmith-if'),
+  s3 = require('metalsmith-s3')
   // fs = require('fs')
 
 var now = new Date()
@@ -36,7 +38,8 @@ metalsmith(__dirname)
   .use(define({
     site: {
       title: 'spaceinvade.rs',
-      author: 'Landry Soules'
+      author: 'Landry Soules',
+      sub: 'Programming and rock n\' roll!'
     },
     now: now
   }))
@@ -50,6 +53,14 @@ metalsmith(__dirname)
     server: 'build',
     files: ['src/**/*.md', 'layouts/**/*.swig']
   }))
+  .use(msIf(
+    process.env.AWS,
+    s3({
+      action: 'write',
+      bucket: 'spaceinvade.rs',
+      region: 'eu-west-1'
+    }) // this plugin will run
+  ))
   .destination('./build')
   .build(function(err) {
     if (err) {

@@ -17,7 +17,7 @@
     <div class="visible-xs">
       <nav class="navbar navbar-inverse">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">spaceinvade.rs</a>
+          <a class="navbar-brand" href="#">{{site.title}}</a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -27,17 +27,20 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li>
-              <a href="{{ get_url() }}">Blog</a>
+              <a href="/">Blog</a>
             </li>
 
             <li>
-              <a href="{{ get_url('archives/') }}">Archives</a>
+              <a href="/pages/articles">Articles</a>
             </li>
             <!-- <li><a href=
                     "{{ get_url('about') }}">About</a></li>-->
 
             <li>
               <a href="{{ get_url('feed.xml') }}">Feed</a>
+            </li>
+            <li>
+              <a href="/pages/now">Now</a>
             </li>
           </ul>
         </div>
@@ -63,17 +66,20 @@
             <ul class="side-nav list-unstyled">
 
               <li>
-                <a href="{{ get_url() }}">Blog</a>
+                <a href="/">Blog</a>
               </li>
 
               <li>
-                <a href="{{ get_url('archives/') }}">Archives</a>
+                <a href="/pages/articles">Articles</a>
               </li>
               <!--  <li><a href=
                     "{{ get_url('about/') }}">About</a></li> -->
 
               <li>
                 <a href="{{ get_url('feed.xml') }}">Feed</a>
+              </li>
+              <li>
+                <a href="/pages/now">Now</a>
               </li>
             </ul>
           </div>
@@ -100,7 +106,7 @@
           <div id="footer">
             <p><img src="/images/alien.png" class="center-block"></p>
             <p>2014 -
-              {{ now | date('Y') }} 
+              {{ now | date('Y') }}
               {{ site.author }}</p>
             <p>– powered by
               <a href="http://metalsmith.io">metalsmith</a>

@@ -13,7 +13,7 @@ RESTful applications have many advantages over other techniques. My personal fav
 *  build your services once, call them from anywhere (browser, native phone app, whatever)
 *  test your server application easily with a REST client (I'm personally very fond of [Postman](http://www.getpostman.com/)).
 
-##JSON Web Tokens
+## JSON Web Tokens
 
 Once you're convinced that a REST API on the server side is the best way to build a modern app, what is the best way to implement it ? This tutorial will use node.js, but of course you can replace it with python, ruby or even java.  
 However, your application, as great as it is, is useless since you are not able to authenticate its users. In this field too, several solutions are available, but the most appealing to me is JSON web tokens (JWT).  
@@ -264,7 +264,7 @@ In order to test our token, we will now call our user service:
 
 Don't forget to add an authentication header, and paste the token the server just generated.  
 
-##Angular client
+## Angular client
 Now that we have checked with postman that our API works as expected, it's time to implement our angular client.
 Form validation the angular way is brilliantly explained in this article: [http://tutorials.jenkov.com/angularjs/forms.html](http://tutorials.jenkov.com/angularjs/forms.html).
 Let's first edit client/components/navbar/navbar.html, in order to add sign-in/sign-up form (we will add it in the navigation bar):
