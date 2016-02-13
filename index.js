@@ -11,12 +11,20 @@ var metalsmith = require('metalsmith'),
   snippet = require('metalsmith-snippet'),
   define = require('metalsmith-define'),
   msIf = require('metalsmith-if'),
-  s3 = require('metalsmith-s3')
+  s3 = require('metalsmith-s3'),
+  sass = require('metalsmith-sass')
   // fs = require('fs')
 
 var now = new Date()
 
 metalsmith(__dirname)
+.use(sass({
+  file: 'css/_bootstrap.scss',
+    outputStyle: "expanded",
+    sourceMap: true,
+  sourceMapContents: true
+  }
+))
   .use(ignore(['content/drafts/*']))
   .use(collections({
     pages: {
@@ -62,6 +70,15 @@ metalsmith(__dirname)
     }) // this plugin will run
   ))
   .destination('./build')
+
+    // {
+    // includePaths: [
+    //   'src/css'
+    // ]
+    // file: 'src/css/_bootstrap.scss',
+    // outputDir: 'css/' // This changes the output dir to "build/css/" instead of "build/scss/"
+    // }
+
   .build(function(err) {
     if (err) {
       console.log(err)

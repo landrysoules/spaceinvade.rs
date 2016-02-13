@@ -269,7 +269,7 @@ Now that we have checked with postman that our API works as expected, it's time 
 Form validation the angular way is brilliantly explained in this article: [http://tutorials.jenkov.com/angularjs/forms.html](http://tutorials.jenkov.com/angularjs/forms.html).
 Let's first edit client/components/navbar/navbar.html, in order to add sign-in/sign-up form (we will add it in the navigation bar):
 
-~~~ html
+``` html
 <html>
   <head>
     <meta name="generator"
@@ -287,7 +287,7 @@ Let's first edit client/components/navbar/navbar.html, in order to add sign-in/s
 			<div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
 			  <ul class="nav navbar-nav">
 				<li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-				  <a ng-href="\{\{item.link\}\}">\{\{item.title\}\}</a>
+				  <a ng-href="{{item.link}}">{{item.title}}</a>
 				</li>
 			  </ul>
 			  <form class="navbar-form navbar-right" role="search" name="user_form" novalidate="">
@@ -312,7 +312,7 @@ Let's first edit client/components/navbar/navbar.html, in order to add sign-in/s
                 </ul>
             </div>
 			<div class="alert" ng-class="{'alert-danger': message.status=='ko', 'alert-success': message.status=='ok'}" ng-show="(message)">
-               \{\{message.text\}\}
+               {{message.text}}
             </div>
 				  </div>
 
@@ -328,7 +328,7 @@ Let's first edit client/components/navbar/navbar.html, in order to add sign-in/s
   </body>
 </html>
 
-~~~
+```
 We will need to enlarge body width, to allow our form to fit in the navigation bar. It is done very easily by editing app.scss:
 change max-width to 790px and run ```grunt sass```.
 
