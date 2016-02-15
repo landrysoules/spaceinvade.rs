@@ -39,13 +39,13 @@
     {% if site.title %}{% endif %}
 
     <div class="container">
-
-      <div class="col-xs-12 col-md-9" id="content">
+<div class="row">
+      <div class="col-xs-12 col-md-8" id="content">
         <div class="row item">
           {% block breadcrumbs %}{% endblock %}
         </div>{% block content %}{% endblock %}
       </div>
-
+</div>
     </div>
   </body>
 </html>

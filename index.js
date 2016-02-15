@@ -18,13 +18,6 @@ var metalsmith = require('metalsmith'),
 var now = new Date()
 
 metalsmith(__dirname)
-.use(sass({
-  file: 'css/_bootstrap.scss',
-    outputStyle: "expanded",
-    sourceMap: true,
-  sourceMapContents: true
-  }
-))
   .use(ignore(['content/drafts/*']))
   .use(collections({
     pages: {
@@ -70,18 +63,24 @@ metalsmith(__dirname)
     }) // this plugin will run
   ))
   .destination('./build')
+  .use(sass({
+    file: 'css/space.scss',
+    outputDir: 'css/',
+    outputStyle: "expanded",
+    sourceMap: true,
+    sourceMapContents: true
+  }))
+// {
+// includePaths: [
+//   'src/css'
+// ]
+// file: 'src/css/_bootstrap.scss',
+// outputDir: 'css/' // This changes the output dir to "build/css/" instead of "build/scss/"
+// }
 
-    // {
-    // includePaths: [
-    //   'src/css'
-    // ]
-    // file: 'src/css/_bootstrap.scss',
-    // outputDir: 'css/' // This changes the output dir to "build/css/" instead of "build/scss/"
-    // }
-
-  .build(function(err) {
-    if (err) {
-      console.log(err)
-      throw err
-    }
-  })
+.build(function(err) {
+  if (err) {
+    console.log(err)
+    throw err
+  }
+})
