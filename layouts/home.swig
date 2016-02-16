@@ -1,22 +1,20 @@
 {% extends 'base.swig' %}
 
 {% block content %}
-<div class="post_content">
-  <div class="row item">
-    <div class="item-header">
-      <h1>{{ site.sub }}</h1>
-      <h2>{{ item.date }}{% if tags %}
-        <span>&raquo;</span>
-        {% for tag in tags %}
-        <a href="#">{{ tag }}</a>{% if not loop.last %},
-        {% endif %}{% endfor %}{% endif %}</h2>
-    </div>
-
+{% for post in collections.posts %}
+<article class="posts">
+  <div class="posts-date">
+    {{post.date|date('F jS, Y')}}
   </div>
-
-  <div class="row item-body">
-    {{ contents | safe }}
+  <div>
+    <a href="/{{post.path }}" class="posts-title">{{ post.title }}</a>
   </div>
+  <div class="posts-summary">
+  {{ post.excerpt|safe }}
+  </div>
+</article>
 
-</div>
+{% endfor %}
+{# </div> #}
+{# </div> #}
 {% endblock %}

@@ -2,10 +2,10 @@
 layout: post.swig
 title: "CouchDB/Lucene integration"
 tags: [CouchDB]
+date: 2014-07-23
 ---
 
-![CouchDB logo](https://ef65e426d0abf9418992e271986035a1945d7865.googledrive.com/host/0Byy3K2j5Zp_TeXByVnlqTS10UUU/couchdb-logo1.png)
-
+<img src="https://ef65e426d0abf9418992e271986035a1945d7865.googledrive.com/host/0Byy3K2j5Zp_TeXByVnlqTS10UUU/couchdb-logo1.png" class="img-responsive">
 CouchDB is an awesome database, however you can face situations where the map/reduce views won't be able to solve efficiently your problem.  
 Let's take a simple client document:  
 

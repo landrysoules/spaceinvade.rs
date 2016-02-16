@@ -2,6 +2,7 @@
 layout: post.swig
 title: "Install Python 2.7 on Windows 8"
 tags: [Python]
+date: 2014-07-05
 ---
 
 ![Python logo](https://ef65e426d0abf9418992e271986035a1945d7865.googledrive.com/host/0Byy3K2j5Zp_TeXByVnlqTS10UUU/Python_logo-large.png)

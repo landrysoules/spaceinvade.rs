@@ -2,10 +2,10 @@
 layout: post.swig
 title: "Make your developer's life easier on Windows 8"
 tags: [Windows8]
+date: 2014-07-13
 ---
 
-![Windows 8](https://ef65e426d0abf9418992e271986035a1945d7865.googledrive.com/host/0Byy3K2j5Zp_TeXByVnlqTS10UUU/Windows_8.jpg)  
-
+<img src="https://ef65e426d0abf9418992e271986035a1945d7865.googledrive.com/host/0Byy3K2j5Zp_TeXByVnlqTS10UUU/Windows_8.jpg" class="img-responsive" alt="Windows 8">
 Even though I've been a hardcore Linux user since a dozen years, I must admit that I enjoy Windows 8 !  
 Here are some tips to make it even better !
 ## Install a real console

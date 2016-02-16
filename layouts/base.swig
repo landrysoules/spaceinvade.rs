@@ -10,42 +10,57 @@
       {{ site.subtitle }}{% endif %}</title>
     {% include "header.swig" %}
   </head>
-
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand banner" href="#">{{site.title}}</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid">
+      <div class="row row-home">
+        <div class="col-md-4 left-content text-center">
+          <div class="container-fluid">
+            <div>
+              <a href="/" class="banner">spaceinvade.rs</a>
+            </div>
+            <div>
+              <img src="/images/profile2.jpg" alt="Landry Soules" class="img-circle" height="200px" width="200px">
+            </div>
+            <p class="portrait">
+              <div class="portrait">Landry Soules</div>
+              <div class="portrait">full-stack developer</div>
+            </p>
+            <div>
+              <ul class="list-unstyled list-inline">
+                <li>
+                  <a href="https://github.com/landrysoules">
+                    <i class="fa fa-github-alt fa-lg"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/landry_soules">
+                    <i class="fa fa-twitter fa-lg"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://plus.google.com/u/0/+LandrySoules">
+                    <i class="fa fa-google-plus fa-lg"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="/rss.xml">
+                    <i class="fa fa-rss fa-lg"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer">
+              <i class="fa fa-copyright fa-lg"></i> (MIT licence) Landry Soules 2014 - {{ now|date('Y') }}
+              <p>POWERED BY <a href="http://metalsmith.io">METALSMITH</a></p>
+            </div>
+          </div>
         </div>
-        <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active">
-            <a href="/">Home</a>
-          </li>
-          <li role="presentation">
-            <a href="/pages/articles">Articles</a>
-          </li>
-          <li role="presentation">
-            <a href="#">Messages</a>
-          </li>
-        </ul>
+        <div class="col-md-8 main-content">
+          <div class="container-fluid">
+            {% block content %}{% endblock %}
+          </div>
+        </div>
       </div>
-    </nav>
-
-    {% if site.title %}{% endif %}
-
-    <div class="container">
-<div class="row">
-      <div class="col-xs-12 col-md-8" id="content">
-        <div class="row item">
-          {% block breadcrumbs %}{% endblock %}
-        </div>{% block content %}{% endblock %}
-      </div>
-</div>
     </div>
   </body>
 </html>

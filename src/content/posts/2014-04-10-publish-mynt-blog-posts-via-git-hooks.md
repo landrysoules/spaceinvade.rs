@@ -1,9 +1,11 @@
 ---
 title: publish mynt blog posts via git hook
 layout: post.swig
+date: 2014-04-10
 ---
 
-I just discovered Mynt, and so far it's a wonderful experience. But I lacked a way of easily publish my posts. It took me a week-end, but I built a very satisfying and easy to use solution to publish your posts directly from Git. I found great inspiration from this [article](http://blog.jameskyle.org/2012/12/deploying-pelican-blog-with-bitbucket-commit-hooks) from James Kyle.
+I just discovered Mynt, and so far it's a wonderful experience. But I lacked a way of easily publish my posts. It took me a week-end, but I built a very satisfying and easy to use solution to publish your posts directly from Git. I found great inspiration from this [article](http://blog.jameskyle.org/2012/12/deploying-pelican-blog-with-bitbucket-commit-hooks) from James Kyle.  
+
 This method involves using a git post hook from [Bitbucket](http://www.bitbucket.org), but you should be able to easily adapt it for github or any other git host.
 You will also need Gunicorn, as well as Supervisor, and the web server I use is Nginx.
 Of course, you will set up a virtualenv, and install mynt, gunicorn and supervisor.

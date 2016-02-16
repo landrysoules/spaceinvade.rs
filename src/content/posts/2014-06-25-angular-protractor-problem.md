@@ -2,6 +2,7 @@
 layout: post.swig
 title: "Protractor tests problem with angular"
 tags: [angular.js]
+date: 2014-06-25
 ---
 
 I'm actively learning angular.js, and after having completed the brilliant [codeschools video tutorial](https://www.codeschool.com/courses/shaping-up-with-angular-js), I'm diving into [the official tutorial](https://docs.angularjs.org/tutorial).  

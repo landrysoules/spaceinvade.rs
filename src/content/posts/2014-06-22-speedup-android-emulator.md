@@ -2,6 +2,7 @@
 layout: post.swig
 title: "Speed up Android emulator in Windows"
 tags: [Android]
+date: 2014-06-22
 ---
 
 I've been complaining for years about the incredibly slow startup and bad responsiveness of the Android emulator.  

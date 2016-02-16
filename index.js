@@ -8,12 +8,12 @@ var metalsmith = require('metalsmith'),
   browserSync = require('metalsmith-browser-sync'),
   prism = require('metalsmith-prism'),
   ignore = require('metalsmith-ignore'),
-  snippet = require('metalsmith-snippet'),
   define = require('metalsmith-define'),
   msIf = require('metalsmith-if'),
   s3 = require('metalsmith-s3'),
-  sass = require('metalsmith-sass')
-  // fs = require('fs')
+  sass = require('metalsmith-sass'),
+  excerpts = require('metalsmith-better-excerpts'),
+  feed = require('metalsmith-feed')
 
 var now = new Date()
 
@@ -24,13 +24,18 @@ metalsmith(__dirname)
       pattern: 'content/pages/*.md'
     },
     posts: {
-      pattern: 'content/posts/*.md'
-        // sortBy: 'date',
-        // reverse: true
+      pattern: 'content/posts/*.md',
+      sortBy: 'date',
+      reverse: true
     }
   }))
   .use(markdown({
     langPrefix: 'language-'
+  }))
+  .use(excerpts({
+    stripTags: true,
+    pruneLength: 400,
+    pruneString: '…'
   }))
   .use(permalinks({
     pattern: ':collection/:title'
@@ -39,20 +44,37 @@ metalsmith(__dirname)
   .use(define({
     site: {
       title: 'spaceinvade.rs',
+      url: 'http://spaceinvade.rs',
       author: 'Landry Soules',
       sub: 'Programming and rock n\' roll!'
     },
     now: now
   }))
+  .use(feed({
+    collection: 'posts'
+  }))
   .use(layouts({
     engine: 'swig'
-  }))
-  .use(snippet({
-    maxLength: 200
   }))
   .use(browserSync({
     server: 'build',
     files: ['src/**/*.md', 'layouts/**/*.swig']
+  }))
+  // .use(msIf(
+  //   process.env.AWS,
+  //   s3({
+  //     action: 'write',
+  //     bucket: 'spaceinvade.rs',
+  //     region: 'eu-west-1'
+  //   }) // this plugin will run
+  // ))
+  .destination('./build')
+  .use(sass({
+    file: 'css/space.scss',
+    outputDir: 'css/'
+      // outputStyle: "expanded",
+      // sourceMap: true,
+      // sourceMapContents: true
   }))
   .use(msIf(
     process.env.AWS,
@@ -62,25 +84,9 @@ metalsmith(__dirname)
       region: 'eu-west-1'
     }) // this plugin will run
   ))
-  .destination('./build')
-  .use(sass({
-    file: 'css/space.scss',
-    outputDir: 'css/',
-    outputStyle: "expanded",
-    sourceMap: true,
-    sourceMapContents: true
-  }))
-// {
-// includePaths: [
-//   'src/css'
-// ]
-// file: 'src/css/_bootstrap.scss',
-// outputDir: 'css/' // This changes the output dir to "build/css/" instead of "build/scss/"
-// }
-
-.build(function(err) {
-  if (err) {
-    console.log(err)
-    throw err
-  }
-})
+  .build(function(err) {
+    if (err) {
+      console.log(err)
+      throw err
+    }
+  })

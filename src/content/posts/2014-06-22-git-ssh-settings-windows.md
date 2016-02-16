@@ -2,6 +2,7 @@
 layout: post.swig
 title: Access your Bitbucket Git repository from your Windows PC
 tags: [Git]
+date: 2014-06-22
 ---
 
 In order to work with your Git repository on your Windows PC, you will have to follow these steps:

@@ -2,6 +2,7 @@
 layout: post.swig
 title: "MEAN stack application with CouchDB - Express 4 - Angular.js"
 tags: [MEAN, express, angular]
+date: 2014-08-16
 ---
 
 ### Note: you can find the source code for this tutorial on [github](https://github.com/landrysoules/trag)

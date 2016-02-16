@@ -1,3 +1,6 @@
 /.project
 build
 node_modules
+.tag*
+*.zip
+**/__MACOSX/

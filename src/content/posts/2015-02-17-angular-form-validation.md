@@ -2,6 +2,7 @@
 layout: post.swig
 title: Angular 1.3.x form validation with bootstrap
 tags: [angular]
+date: 2015-02-17
 ---
 
 This post will give you hints on angular 1.3+ form validation.  
