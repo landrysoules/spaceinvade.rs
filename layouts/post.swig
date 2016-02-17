@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
   <div class="col-md-12">
-    <div class="post_content">
+    <div class="post_content col-centered">
       <div class="row item">
         <div class="item-header">
           <h1 class="post.title">{{ title }}</h1>

@@ -577,3 +577,14 @@ p.portrait{
   display: -ms-flexbox;
   display:         flex;
 }
+
+.post_content{
+   width:700px; /* or whatever width you want. */
+   max-width:700px; /* or whatever width you want. */
+  //  display: inline-block;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
