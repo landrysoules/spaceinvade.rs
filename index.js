@@ -56,10 +56,11 @@ metalsmith(__dirname)
   .use(layouts({
     engine: 'swig'
   }))
-  .use(browserSync({
+  .use(msIf(!process.env.ENV || process.env.ENV == 'DEV',
+       browserSync({
     server: 'build',
     files: ['src/**/*.md', 'layouts/**/*.swig']
-  }))
+  })))
   // .use(msIf(
   //   process.env.AWS,
   //   s3({
