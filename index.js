@@ -73,7 +73,8 @@ metalsmith(__dirname)
   // ))
   .destination('./build')
   .use(sass({
-    file: 'css/space.scss',
+    file: 'sass/space.scss',
+    includePaths: ['sass'],
     outputDir: 'css/'
       // outputStyle: "expanded",
       // sourceMap: true,
