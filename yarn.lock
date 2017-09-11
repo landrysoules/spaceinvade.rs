@@ -2344,9 +2344,9 @@ metalsmith-prism@^2.1.1:
     metalsmith "^1.7.0"
     prismjs "1.4.1"
 
-metalsmith-s3@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/metalsmith-s3/-/metalsmith-s3-0.0.2.tgz#978e202c7d58a6f369e2731cd1c1ef37be94dd08"
+metalsmith-s3@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-s3/-/metalsmith-s3-0.1.0.tgz#ed75a239965efc209d263bd1d36a6c63a73f7e24"
   dependencies:
     async "^0.9.0"
     aws-sdk "^2.1.7"
