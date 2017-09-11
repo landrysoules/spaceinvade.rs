@@ -15,7 +15,7 @@
   "homepage": "https://bitbucket.org/landry_soules/spaceinvade.rs#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.2.0",
+    "gulp-sass": "^3.1.0",
     "metalsmith": "^2.3.0",
     "metalsmith-browser-sync": "^1.1.0",
     "metalsmith-collections": "^0.7.0",
