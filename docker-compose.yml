@@ -1,0 +1,15 @@
+version: '3'
+services:
+  blog:
+    image: superhans/spaceinvade.rs
+    ports:
+      - "3000:3000"
+    environment:
+      # - METAL_ENV=PROD
+      - DEBUG=metalsmith:*
+    volumes:
+      - "/home/landry/Git/spaceinvaders/spaceinvade.rs:/blog"
+  nginx:
+    image: superhans/nginx
+    ports:
+      - "80:80"

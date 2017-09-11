@@ -16,7 +16,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^2.2.0",
-    "metalsmith": "^2.1.0",
+    "metalsmith": "^2.3.0",
     "metalsmith-browser-sync": "^1.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-define": "^1.0.0",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "metalsmith-better-excerpts": "^0.1.7",
+    "metalsmith-debug": "^1.1.0",
     "metalsmith-feed": "^0.2.0",
     "metalsmith-if": "^0.1.1",
     "metalsmith-s3": "0.0.2",
