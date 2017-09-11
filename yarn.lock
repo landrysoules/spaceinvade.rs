@@ -1098,10 +1098,6 @@ extend@~1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-1.2.1.tgz#a0f5fd6cfc83a5fe49ef698d60ec8a624dd4576c"
 
-extend@~2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/extend/-/extend-2.0.1.tgz#1ee8010689e7395ff9448241c98652bc759a8260"
-
 extglob@^0.3.1:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/extglob/-/extglob-0.3.2.tgz#2e18ff3d2f49ab2765cec9023f011daa8d8349a1"
@@ -2290,12 +2286,12 @@ metalsmith-define@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/metalsmith-define/-/metalsmith-define-2.0.1.tgz#a5a48632e62958ba61a74169f65bc2b6f65b915d"
 
-metalsmith-feed@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/metalsmith-feed/-/metalsmith-feed-0.2.0.tgz#c9a069fdae10f767ec5f0f8873b166f26063e666"
+metalsmith-feed@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-feed/-/metalsmith-feed-0.3.0.tgz#6fac6296ef114c4c49ed5a08b106177f3f8b49cf"
   dependencies:
-    extend "~2.0.0"
-    rss "~1.1.0"
+    extend "^3.0.0"
+    rss "^1.2.2"
 
 metalsmith-if@^0.1.1:
   version "0.1.1"
@@ -2437,11 +2433,21 @@ micromatch@2.3.11, micromatch@^2.1.5, micromatch@^2.3.7:
     parse-glob "^3.0.4"
     regex-cache "^0.4.2"
 
+mime-db@~1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.25.0.tgz#c18dbd7c73a5dbf6f44a024dc0d165a1e7b1c392"
+
 mime-db@~1.30.0:
   version "1.30.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.30.0.tgz#74c643da2dd9d6a45399963465b26d5ca7d71f01"
 
-mime-types@^2.0.3, mime-types@^2.0.7, mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.16, mime-types@~2.1.7:
+mime-types@2.1.13:
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.13.tgz#e07aaa9c6c6b9a7ca3012c69003ad25a39e92a88"
+  dependencies:
+    mime-db "~1.25.0"
+
+mime-types@^2.0.7, mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.16, mime-types@~2.1.7:
   version "2.1.17"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.17.tgz#09d7a393f03e995a79f8af857b70a9e0ab16557a"
   dependencies:
@@ -3268,12 +3274,12 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-rss@~1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/rss/-/rss-1.1.1.tgz#eb240f55e48bda42b9f546be5fc659221a95c72c"
+rss@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/rss/-/rss-1.2.2.tgz#50a1698876138133a74f9a05d2bdc8db8d27a921"
   dependencies:
-    mime-types "^2.0.3"
-    xml "^1.0.0"
+    mime-types "2.1.13"
+    xml "1.0.1"
 
 rx@4.1.0:
   version "4.1.0"
@@ -4022,7 +4028,7 @@ xml2js@0.4.17:
     sax ">=0.6.0"
     xmlbuilder "^4.1.0"
 
-xml@^1.0.0:
+xml@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
 
