@@ -13,11 +13,13 @@ var metalsmith = require('metalsmith'),
   s3 = require('metalsmith-s3'),
   sass = require('metalsmith-sass'),
   excerpts = require('metalsmith-better-excerpts'),
-  feed = require('metalsmith-feed')
+  feed = require('metalsmith-feed'),
+  debug = require('metalsmith-debug')
 
 var now = new Date()
 
 metalsmith(__dirname)
+  .use(debug())
   .use(ignore(['content/drafts/*']))
   .use(collections({
     pages: {
@@ -56,10 +58,11 @@ metalsmith(__dirname)
   .use(layouts({
     engine: 'swig'
   }))
-  .use(browserSync({
+  .use(msIf(!process.env.METAL_ENV || process.env.METAL_ENV == 'DEV',
+       browserSync({
     server: 'build',
     files: ['src/**/*.md', 'layouts/**/*.swig']
-  }))
+  })))
   // .use(msIf(
   //   process.env.AWS,
   //   s3({

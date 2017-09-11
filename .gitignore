@@ -4,3 +4,4 @@ node_modules
 .tag*
 *.zip
 **/__MACOSX/
+src/content/drafts
