@@ -2152,9 +2152,9 @@ metalsmith-markdown@^0.2.1:
     debug "~0.7.4"
     marked "~0.3.1"
 
-metalsmith-permalinks@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/metalsmith-permalinks/-/metalsmith-permalinks-0.4.1.tgz#7891dc26ccad2e2fd860038c0f5293f2ecaea402"
+metalsmith-permalinks@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-permalinks/-/metalsmith-permalinks-0.5.0.tgz#0fec5b1f0687828c198d33b5d479cc1cec4b1a1f"
   dependencies:
     debug "~0.7.4"
     moment "^2.5.1"
