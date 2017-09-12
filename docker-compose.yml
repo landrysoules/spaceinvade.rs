@@ -8,8 +8,8 @@ services:
       # - METAL_ENV=PROD
       - DEBUG=metalsmith:*
     volumes:
-      - "/home/landry/Git/spaceinvaders/spaceinvade.rs:/blog"
-  nginx:
-    image: superhans/nginx
-    ports:
-      - "80:80"
+      - "/home/landry/Git/spaceinvaders/spaceinvade.rs/src/content:/blog/src/content:z"
+  # nginx:
+  #   image: superhans/nginx
+  #   ports:
+  #     - "80:80"
