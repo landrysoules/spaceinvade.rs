@@ -2113,9 +2113,9 @@ metalsmith-define@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/metalsmith-define/-/metalsmith-define-2.0.1.tgz#a5a48632e62958ba61a74169f65bc2b6f65b915d"
 
-metalsmith-feed@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/metalsmith-feed/-/metalsmith-feed-0.3.0.tgz#6fac6296ef114c4c49ed5a08b106177f3f8b49cf"
+metalsmith-feed@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-feed/-/metalsmith-feed-0.5.0.tgz#e445ce20fcbd64200070af80f8417bdbea7adee6"
   dependencies:
     extend "^3.0.0"
     rss "^1.2.2"
