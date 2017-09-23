@@ -63,14 +63,6 @@ metalsmith(__dirname)
     server: 'build',
     files: ['src/**/*.md', 'layouts/**/*.swig']
   })))
-  // .use(msIf(
-  //   process.env.AWS,
-  //   s3({
-  //     action: 'write',
-  //     bucket: 'spaceinvade.rs',
-  //     region: 'eu-west-1'
-  //   }) // this plugin will run
-  // ))
   .destination('./build')
   .use(sass({
     file: 'sass/space.scss',
