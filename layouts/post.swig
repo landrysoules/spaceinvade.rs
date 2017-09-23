@@ -23,7 +23,9 @@
       </div>
 
       <div class="row item-body">
-        {{ contents | safe }}
+        <div class="col-md-12">
+          {{ contents | safe }}
+        </div>
       </div>
 
       <div class="row item-body">
