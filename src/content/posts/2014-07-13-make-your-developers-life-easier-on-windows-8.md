@@ -28,7 +28,6 @@ I surely wouldn't use something else than eclipse when coding anything Java rela
 And if you can't live without [vim](http://www.vim.org), you'll find it working very well on windows.
 
 ## Screen captures
-![pop](http://getgreenshot.org/wp-content/themes/greenshot/images/headers/greenshot_logo.gif)
 When you are confronted to the painful task of writing some documentation, you need a solid screen capture tool. Don't look any further than [Greenshot](http://getgreenshot.org) !
 
 ## Copy/paste
