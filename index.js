@@ -10,11 +10,10 @@ var metalsmith = require('metalsmith'),
   ignore = require('metalsmith-ignore'),
   define = require('metalsmith-define'),
   msIf = require('metalsmith-if'),
-  s3 = require('metalsmith-s3'),
   sass = require('metalsmith-sass'),
-  excerpts = require('metalsmith-better-excerpts'),
   feed = require('metalsmith-feed'),
-  debug = require('metalsmith-debug')
+  debug = require('metalsmith-debug'),
+  snippet = require('metalsmith-snippet')
 
 var now = new Date()
 
@@ -34,15 +33,15 @@ metalsmith(__dirname)
   .use(markdown({
     langPrefix: 'language-'
   }))
-  .use(excerpts({
-    stripTags: true,
-    pruneLength: 400,
-    pruneString: '…'
-  }))
   .use(permalinks({
     pattern: ':collection/:title'
   }))
   .use(prism)
+  .use(snippet({
+    maxLength: 400,
+    stripPre: true,
+    stop: ['<code']
+  }))
   .use(define({
     site: {
       title: 'spaceinvade.rs',
@@ -72,14 +71,6 @@ metalsmith(__dirname)
       // sourceMap: true,
       // sourceMapContents: true
   }))
-  .use(msIf(
-    process.env.AWS,
-    s3({
-      action: 'write',
-      bucket: 'spaceinvade.rs',
-      region: 'eu-west-1'
-    }) // this plugin will run
-  ))
   .build(function(err) {
     if (err) {
       console.log(err)

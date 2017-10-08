@@ -10,7 +10,7 @@
     <a href="/{{post.path }}" class="posts-title">{{ post.title }}</a>
   </div>
   <div class="posts-summary">
-  {{ post.excerpt|safe }}
+  {{ post.snippet|safe }}
   </div>
 </article>
 
