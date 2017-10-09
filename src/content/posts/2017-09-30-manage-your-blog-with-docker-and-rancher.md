@@ -60,14 +60,19 @@ First run ```docker login```, then ```docker push superhans/mmdb_api```.
 As Fedora has its own docker registry, I had to first remove all repos related to fedora/redhat from /etc/containers/registries.conf in order to make it work.
 
 ## Server preparation
-Maybe the best part : now that I use docker, the only thing I need to install on my vps (recently switched to [contabo](https://contabo.com/) and more than happy with them) is docker !
-Here you have 2 options :
+Maybe the best part : now that I use docker, the only thing I need to install on my vps (recently switched to [contabo](https://contabo.com/) and more than happy with them) is docker !  
+Here you have multiple options :
 - [docker cloud](https://cloud.docker.com)
 - [rancher](https://rancher.com)
+- [mesos](https://mesos.apache.org/)
+- [kubernetes](https://kubernetes.io/)
+
 I decided to use rancher, basically because I found it easier to install, and never looked back, since it's so powerful and intuitive to use.  
 Rancher installation is really well explained in the [official doc](https://rancher.com/docs/rancher/v1.6/en/installing-rancher/installing-server/). Just make sure you install the [officially supported](https://rancher.com/docs/rancher/v1.6/en/hosts/#supported-docker-versions) version of docker : I stupidly installed the latest, and experienced weird results!  
 I installed both rancher server and host on the same vps : it's not the recommended way, but I have no better choice since I have only one vps...  
 As for the ports needed to be opened : I had to restart my vps after changes in firewalld to make it work.
+
+<img src="/images/201710/rancher.png" class="img-responsive">
 
 ## Rancher basic setup
 After successful installation, fire up your favorite browser and go to ```http://<your domain>:8080```. Rancher alerts you that you should define an admin user. You can use basic password protection, or github authentication, which is really well integrated.
