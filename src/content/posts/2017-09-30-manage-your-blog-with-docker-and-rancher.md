@@ -48,7 +48,7 @@ This file will tell docker which files should be excluded from the image.
 
 ### Build and use the image
 Everything's in place, I can build the image.  
-```docker build -t superhans/mmdb_api .```  
+```docker build -t superhans/spaceinvade.rs .```  
 Run it with :  
 ```docker run  --rm  -p 3000:3000 -v "$(pwd)"/src:/blog/src:z superhans/spaceinvade.rs```  
 I couldn't have the volume work correctly without z parameter, due to SELinux restrictions.  
@@ -56,7 +56,7 @@ This command will generate the static site and launch it through node server and
 ```docker run  --rm -e METAL_ENV=prod -p 3000:3000 -v "$(pwd)"/src:/blog/src:z superhans/spaceinvade.rs```
 
 Next step is to finally push this image to [docker hub](https://hub.docker.com/). Of course, a docker hub account is required.  
-First run ```docker login```, then ```docker push superhans/mmdb_api```.  
+First run ```docker login```, then ```docker push superhans/spaceinvade.rs```.  
 As Fedora has its own docker registry, I had to first remove all repos related to fedora/redhat from /etc/containers/registries.conf in order to make it work.
 
 ## Server preparation
