@@ -48,7 +48,7 @@ This file will tell docker which files should be excluded from the image.
 
 ### Build and use the image
 Everything's in place, I can build the image.  
-```docker build -t superhans/mmdb_api .```  
+```docker build -t superhans/spaceinvade.rs .```  
 Run it with :  
 ```docker run  --rm  -p 3000:3000 -v "$(pwd)"/src:/blog/src:z superhans/spaceinvade.rs```  
 I couldn't have the volume work correctly without z parameter, due to SELinux restrictions.  
