@@ -13,6 +13,20 @@ I finally followed the advice of my smart [co-worker](http://blog.zedroot.org/),
 I wanted to be able to publish new articles simply by pushing to the git repo of my blog. Previously I would create a simple python or ruby service, and call it with a github hook when a new article is pushed. Though it's a perfectly valid, it's still too much work for such a simple need, isn't it ?  
 Actually I'll show you how you can run your blog with **only** docker installed on your server.
 
+## How to install docker
+If you chose to go with rancher, be aware that you would have to install a supported docker version. Rancher's site lists them [here](https://rancher.com/docs/rancher/v1.6/en/hosts/#supported-docker-versions).  
+At the time of writing, version 17.06 of docker is supported, but official docker installation script is broken for fedora !
+```curl https://releases.rancher.com/install-docker/17.06.sh | sh``` throwed the error :
+```dnf makecache: error: argument timer: invalid choice: 'fast' (choose from 'timer')```  
+So that I had to edit install script with [this version](https://gist.github.com/landrysoules/b781826486f8ce9f64a3f64f3a7ab879).
+
+Basically it only adds docker entries in your yum repositories.  
+Install correct version of docker with ```sudo dnf -y install docker-ce-17.06.0.ce-1.el7.centos.x86_64```  
+Make sure docker will be excluded from updates by installing versionlock and using it :  
+```bash
+sudo dnf install 'dnf-command(versionlock)'
+sudo dnf -y install docker-ce-17.06.0.ce-1.el7.centos.x86_64
+```
 ## How to use docker
 I use [metalsmith](http://www.metalsmith.io/) to generate my blog, but I guess you can adapt this architecture for any other static site generator.  
 - I created a docker image of my blog, and pushed it to docker hub.  
