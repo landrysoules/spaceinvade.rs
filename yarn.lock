@@ -2051,9 +2051,9 @@ metalsmith-collections@^0.9.0:
     read-metadata "^1.0.0"
     uniq "^1.0.1"
 
-metalsmith-debug@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/metalsmith-debug/-/metalsmith-debug-1.1.0.tgz#6490225703bf45df96cae485b41838022f696849"
+metalsmith-debug@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-debug/-/metalsmith-debug-1.2.0.tgz#481987987a2ece12b761dc0cc533cf92e5f16bb8"
   dependencies:
     debug "^2.2.0"
     multimatch "^2.1.0"
