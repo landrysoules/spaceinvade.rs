@@ -2014,9 +2014,9 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
-marked@~0.3.1:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
+marked@~0.3.9:
+  version "0.3.12"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.12.tgz#7cf25ff2252632f3fe2406bde258e94eee927519"
 
 meow@^3.7.0:
   version "3.7.0"
@@ -2094,12 +2094,12 @@ metalsmith-layouts@^1.4.4:
     lodash.omit "^4.0.2"
     multimatch "^2.0.0"
 
-metalsmith-markdown@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/metalsmith-markdown/-/metalsmith-markdown-0.2.1.tgz#1a1feeb6c76d15407b75271da81509d07932d753"
+metalsmith-markdown@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/metalsmith-markdown/-/metalsmith-markdown-0.2.2.tgz#f863b7c9c0b2cd5bf034ee0899b0e5a8cde1ebd3"
   dependencies:
     debug "~0.7.4"
-    marked "~0.3.1"
+    marked "~0.3.9"
 
 metalsmith-permalinks@^0.5.0:
   version "0.5.0"
