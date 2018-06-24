@@ -58,20 +58,20 @@ metalsmith(__dirname)
     engine: 'swig'
   }))
   .use(msIf(!process.env.METAL_ENV || process.env.METAL_ENV == 'DEV',
-       browserSync({
-    server: 'build',
-    files: ['src/**/*.md', 'layouts/**/*.swig']
-  })))
+    browserSync({
+      server: 'build',
+      files: ['src/**/*.md', 'layouts/**/*.swig']
+    })))
   .destination('./build')
   .use(sass({
     file: 'sass/space.scss',
     includePaths: ['sass'],
     outputDir: 'css/'
-      // outputStyle: "expanded",
-      // sourceMap: true,
-      // sourceMapContents: true
+    // outputStyle: "expanded",
+    // sourceMap: true,
+    // sourceMapContents: true
   }))
-  .build(function(err) {
+  .build(function (err) {
     if (err) {
       console.log(err)
       throw err
