@@ -13,12 +13,14 @@ var metalsmith = require('metalsmith'),
   sass = require('metalsmith-sass'),
   feed = require('metalsmith-feed'),
   debug = require('metalsmith-debug'),
-  snippet = require('metalsmith-snippet')
+  snippet = require('metalsmith-snippet'),
+  metalsmithExpress = require('metalsmith-express');
 
 var now = new Date()
 
 metalsmith(__dirname)
   .use(debug())
+  .use(msIf(process.env.METAL_ENV == 'PROD', metalsmithExpress()))
   .use(ignore(['content/drafts/*']))
   .use(collections({
     pages: {
@@ -30,18 +32,10 @@ metalsmith(__dirname)
       reverse: true
     }
   }))
-  .use(markdown({
-    langPrefix: 'language-'
-  }))
-  .use(permalinks({
-    pattern: ':collection/:title'
-  }))
+  .use(markdown({langPrefix: 'language-'}))
+  .use(permalinks({pattern: ':collection/:title'}))
   .use(prism)
-  .use(snippet({
-    maxLength: 400,
-    stripPre: true,
-    stop: ['<code']
-  }))
+  .use(snippet({maxLength: 400, stripPre: true, stop: ['<code']}))
   .use(define({
     site: {
       title: 'spaceinvade.rs',
@@ -51,25 +45,16 @@ metalsmith(__dirname)
     },
     now: now
   }))
-  .use(feed({
-    collection: 'posts'
-  }))
-  .use(layouts({
-    engine: 'swig'
-  }))
-  .use(msIf(!process.env.METAL_ENV || process.env.METAL_ENV == 'DEV',
-    browserSync({
-      server: 'build',
-      files: ['src/**/*.md', 'layouts/**/*.swig']
-    })))
+  .use(feed({collection: 'posts'}))
+  .use(layouts({engine: 'swig'}))
+  .use(msIf(!process.env.METAL_ENV || process.env.METAL_ENV == 'DEV', browserSync({
+    server: 'build',
+    files: ['src/**/*.md', 'layouts/**/*.swig']
+  })))
   .destination('./build')
   .use(sass({
-    file: 'sass/space.scss',
-    includePaths: ['sass'],
-    outputDir: 'css/'
-    // outputStyle: "expanded",
-    // sourceMap: true,
-    // sourceMapContents: true
+    file: 'sass/space.scss', includePaths: ['sass'], outputDir: 'css/'
+    // outputStyle: "expanded", sourceMap: true, sourceMapContents: true
   }))
   .build(function (err) {
     if (err) {

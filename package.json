@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "metalsmith-debug": "^1.2.0",
+    "metalsmith-express": "^0.1.0",
     "metalsmith-feed": "^1.0.0",
     "metalsmith-if": "^0.1.1",
     "metalsmith-s3": "0.1.0",
