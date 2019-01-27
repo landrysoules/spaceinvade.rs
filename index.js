@@ -20,7 +20,10 @@ var now = new Date()
 
 metalsmith(__dirname)
   .use(debug())
-  .use(msIf(process.env.METAL_ENV == 'PROD', metalsmithExpress()))
+  .use(msIf(process.env.METAL_ENV == 'PROD', metalsmithExpress({
+    port: process.env.PORT || 3000,
+    liveReload: false
+  })))
   .use(ignore(['content/drafts/*']))
   .use(collections({
     pages: {
