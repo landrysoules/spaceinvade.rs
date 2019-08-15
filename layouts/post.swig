@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-sm-12">
     <div class="post_content col-centered">
       <div class="row item">
         <div class="item-header">
@@ -23,7 +23,7 @@
       </div>
 
       <div class="row item-body">
-        <div class="col-md-12">
+        <div class="col-sm-12 col-xs-12">
           {{ contents | safe }}
         </div>
       </div>

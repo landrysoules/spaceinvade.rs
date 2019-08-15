@@ -34,11 +34,6 @@
                   </a>
             </li>
             <li>
-              <a href="https://plus.google.com/u/0/+LandrySoules">
-                    <i class="fa fa-google-plus fa-lg"></i>
-                  </a>
-            </li>
-            <li>
               <a href="/rss.xml">
                     <i class="fa fa-rss fa-lg"></i>
                   </a>
@@ -50,7 +45,7 @@
           <p>POWERED BY <a href="http://metalsmith.io">METALSMITH</a></p>
         </div>
       </div>
-      <div class="col-xs-12 col-md-8 main-content">
+      <div class="col-sm-12 col-xs-12 col-md-8 main-content">
         {% block content %}{% endblock %}
       </div>
     </div>
