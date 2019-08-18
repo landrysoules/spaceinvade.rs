@@ -13,7 +13,7 @@ var metalsmith = require("metalsmith"),
   sass = require("metalsmith-sass"),
   feed = require("metalsmith-feed"),
   debug = require("metalsmith-debug"),
-  snippet = require("metalsmith-snippet"),
+  snippet = require("metalsmith-snippet");
 
 var now = new Date();
 
