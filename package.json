@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install && METAL_ENV=PROD PORT=3000 node index.js"
+    "start": "node index.js"
   },
   "engines": {
     "node": "10.1.0"
@@ -34,10 +34,8 @@
   },
   "dependencies": {
     "metalsmith-debug": "^1.2.0",
-    "metalsmith-express": "^0.1.0",
     "metalsmith-feed": "^1.0.0",
     "metalsmith-if": "^0.1.1",
-    "metalsmith-s3": "0.1.0",
     "metalsmith-sass": "^1.5.1",
     "metalsmith-snippet": "^2.0.0"
   }
